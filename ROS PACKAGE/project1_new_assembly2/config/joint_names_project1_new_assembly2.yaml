@@ -1,0 +1,25 @@
+# Robot name goes here
+simple_car: 
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  front_left_control: 
+    type: effort_controllers/JointPositionController
+    joint: front_left_joint  
+    pid : {p: 100.0 , i: 0.01 , d: 10.0}
+  
+  # Controller 3
+  front_right_control: 
+    type: effort_controllers/JointPositionController
+    joint: front_right_joint
+    pid : {p: 100.0 , i: 0.01, d: 10.0}
+
+  #Controller 5
+  back_wheels_control: 
+    type: velocity_controllers/JointVelocityController
+    joint: back_wheel_joint  
+    pid : {p: 100.0 , i: 0.01 , d: 10.0}
+
